@@ -7,6 +7,7 @@ const infiniteScrollLoader = document.getElementById("infinite-scroll-loader");
  * here because it is free, and the data is publicly available!
  */
 const apiKey = "n_c29Qdt2esKnftbojgRwJJmwJtUC8hmJWp7OrvlLyM";
+const appName = "Infinite_Scroll_Image_Gallery_App";
 
 let ready = false;
 let imageLoaded = 0;
@@ -36,7 +37,12 @@ function displayPhotos() {
     img.addEventListener("load", handleImageLoaded);
 
     const para = document.createElement("p");
-    para.innerHTML = `Photo by <a href="${photo.user.links.html}" target="_blank">${photo.user.name}</a> on <a href="https://unsplash.com/" target="_blank">Unsplash</a>`;
+    para.innerHTML = `
+      Photo by
+        <a href="${photo.user.links.html}?utm_source=${appName}&utm_medium=referral" target="_blank">${photo.user.name}</a> 
+      on
+        <a href="https://unsplash.com/?utm_source=${appName}&utm_medium=referral" target="_blank">Unsplash</a>
+    `;
 
     const hr = document.createElement("hr");
 
