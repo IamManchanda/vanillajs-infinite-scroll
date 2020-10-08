@@ -36,12 +36,7 @@ function displayPhotos() {
     img.addEventListener("load", handleImageLoaded);
 
     const para = document.createElement("p");
-    para.innerHTML = `
-      Photo by
-        <a href="${photo.user.links.html}" target="_blank">${photo.user.name}</a> 
-      on
-        <a href="https://unsplash.com/" target="_blank">Unsplash</a>
-    `;
+    para.innerHTML = `Photo by <a href="${photo.user.links.html}" target="_blank">${photo.user.name}</a>`;
 
     const hr = document.createElement("hr");
 
